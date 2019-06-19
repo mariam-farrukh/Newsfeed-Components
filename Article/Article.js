@@ -22,7 +22,7 @@ class Article {
     }
     this.domElement.classList.toggle('article-open');
     this.domElement.classList.toggle('close');
-    this.domElement.classList.toggle('article');
+    //this.domElement.classList.toggle('article');
   }
 }
 
