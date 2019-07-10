@@ -131,8 +131,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   const articleParagraph2 = document.createElement('p');
   const articleParagraph3 = document.createElement('p');
   const articleExpandButton = document.createElement('span');
-  // const articleButtonOpen = document.createElement('button');
-  // const articleButtonClose = document.createElement('button');
 
   //structure of elements
   article.appendChild(articleTitle);
@@ -140,7 +138,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   article.appendChild(articleParagraph1);
   article.appendChild(articleParagraph2);
   article.appendChild(articleParagraph3);
-  article.appendChild(articleButton);
+  article.appendChild(articleExpandButton);
   //set class names
   article.classList.add('article');
   articleDate.classList.add('date');
@@ -153,9 +151,9 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   articleParagraph2.textContent = secondParagraph;
   articleParagraph3.textContent = thirdParagraph;
 
-  // articleExpandButton.addEventListener('click', event => {
-  //   console.log('button clicked', event.target);
-  //   articleButtonOpen.classList.toggle('expandButton');
-  // });
+  articleExpandButton.addEventListener('click', event => {
+    console.log('button clicked', event.target);
+    articleButtonExpand.classList.toggle('expandButton');
+  });
   return article
 }
