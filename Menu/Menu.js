@@ -52,10 +52,10 @@ function createMenu(menuItems){
   });
   menu.appendChild(menuList);
   menu.classList.add('menu');
-  const toggleMenu = () => {
+  
+  menuButton.addEventListener('click', event => {
     menu.classList.toggle('menu--open');
-  }
-  menuButton.addEventListener('click', toggleMenu);
+  });
 
   return menu;
 }
