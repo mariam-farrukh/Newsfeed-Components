@@ -151,11 +151,36 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   articleParagraph2.textContent = secondParagraph;
   articleParagraph3.textContent = thirdParagraph;
 
-  articleExpandButton.addEventListener('click', event => {
-    console.log('button clicked', event.target);
-    articleButtonExpand.classList.toggle('close');
-    article.classList.toggle('article-open');
-  });
+  articleExpandButton.addEventListener('click', () => {
+    if (articleExpandButton.textContent === 'close'){
+
+      allArticles = document.querySelectorAll('.article')
+      allbtn = document.querySelectorAll('.expandButton')
+
+      allbtn.forEach(btn => {
+        btn.textContent = 'open'
+      })
+
+      allArticles.forEach((article) => {
+        article.classList.remove('article-open')  
+      })
+
+    } else {
+      allArticles = document.querySelectorAll('.article')
+      allbtn = document.querySelectorAll('.expandButton')
+
+      allbtn.forEach(btn => {
+        btn.textContent = 'open'
+      })
+
+      allArticles.forEach((article) => {
+        article.classList.remove('article-open')
+      })
+
+      articleBtnOpen.textContent = 'close';
+      article.classList.add('article-open')
+    }  
+  })
 
   return article
 }
