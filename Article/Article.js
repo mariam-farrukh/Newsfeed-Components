@@ -153,7 +153,9 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
   articleExpandButton.addEventListener('click', event => {
     console.log('button clicked', event.target);
-    articleButtonExpand.classList.toggle('expandButton');
+    articleButtonExpand.classList.toggle('close');
+    article.classList.toggle('article-open');
   });
+
   return article
 }
