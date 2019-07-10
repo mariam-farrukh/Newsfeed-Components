@@ -45,15 +45,17 @@ menuButton.appendChild(createMenu(menuItems));
 function createMenu(menuItems){
   const menu = document.createElement('div');
   const menuList = document.createElement('ul');
+
   menuItems.forEach(data => {
     const menuListItems = document.createElement('li');
     menuList.appendChild(menuListItems);
     menuListItems.textContent = data;
   });
+  
   menu.appendChild(menuList);
   menu.classList.add('menu');
-  
-  menuButton.addEventListener('click', event => {
+
+  menuButton.addEventListener('click', () => {
     menu.classList.toggle('menu--open');
   });
 

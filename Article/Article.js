@@ -146,13 +146,15 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
 
   //adding text content
   articleTitle.textContent = title;
+  articleExpandButton.textContent = "Expand";
   articleDate.textContent = date;
   articleParagraph1.textContent = firstParagraph;
   articleParagraph2.textContent = secondParagraph;
   articleParagraph3.textContent = thirdParagraph;
 
-  this.articleExpandButton = document.querySelector
-  // articleExpandButton.addEventListener('click', () => {
-  // };
+  articleExpandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+  });
+  
   return article
 }
