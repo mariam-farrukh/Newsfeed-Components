@@ -117,4 +117,42 @@ You will want your component to look like the template below:
   the same format as the others. Refresh the page to see the new artible
 
 */
+const articles = document.querySelector('.articles');
 
+
+function createArticle(){
+  //define new elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleParagraph1 = document.createElement('p');
+  const articleParagraph2 = document.createElement('p');
+  const articleParagraph3 = document.createElement('p');
+  const articleExpandButton = document.createElement('span');
+  // const articleButtonOpen = document.createElement('button');
+  // const articleButtonClose = document.createElement('button');
+
+  //structure of elements
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleParagraph1);
+  article.appendChild(articleParagraph2);
+  article.appendChild(articleParagraph3);
+  article.appendChild(articleButton);
+  //set class names
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleExpandButton.classList.add('expandButton');
+
+  //adding text content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleParagraph1.textContent = firstParagraph;
+  articleParagraph2.textContent = secondParagraph;
+  articleParagraph3.textContent = thirdParagraph;
+
+  articleExpandButton.addEventListener('click', event => {
+    console.log('button clicked', event.target);
+    articleButtonOpen.classList.toggle('expandButton');
+  })
+}
