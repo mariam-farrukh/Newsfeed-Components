@@ -1,6 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
+const articleData = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
@@ -118,9 +118,11 @@ You will want your component to look like the template below:
 
 */
 const articles = document.querySelector('.articles');
+articleData.forEach(data => {
+  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
 
-
-function createArticle(){
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
   //define new elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
@@ -151,8 +153,9 @@ function createArticle(){
   articleParagraph2.textContent = secondParagraph;
   articleParagraph3.textContent = thirdParagraph;
 
-  articleExpandButton.addEventListener('click', event => {
-    console.log('button clicked', event.target);
-    articleButtonOpen.classList.toggle('expandButton');
-  })
+  // articleExpandButton.addEventListener('click', event => {
+  //   console.log('button clicked', event.target);
+  //   articleButtonOpen.classList.toggle('expandButton');
+  // });
+  return article
 }
